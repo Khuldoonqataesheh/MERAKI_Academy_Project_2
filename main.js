@@ -17,7 +17,7 @@ agreement = $(
   '<div> <p id="agreement" >By signing up, you agree to our Terms ,<br> Data Policy and Cookies Policy .</p></div>'
 );
 signIn = $(
-  ' <div class ="signIn"><p id="agreement" >Have an account? </p><button class="sign" > Sign Up</button> </div>'
+  ' <div class ="signIn"><p id="agreement" >Have an account? <button class="sign" > SignIn</button></p> </div>'
 );
 body_1.append(div);
 div.append(header);
@@ -31,11 +31,15 @@ body_1.append(signIn);
 
 div_2 = $('<div class="header" ></div>');
 header_2 = $('<div> <h1  class="h1">Meraki Platform</h1></div> ');
-displayName_2 = $(' <div><input class = "displayName_2" type="text" placeholder="display Name"></div>');
-password_2 = $(' <div><input type="password" placeholder="Password" class = "password_2"></div>');
+displayName_2 = $(
+  ' <div><input class = "displayName_2" type="text" placeholder="display Name"></div>'
+);
+password_2 = $(
+  ' <div><input type="password" placeholder="Password" class = "password_2"></div>'
+);
 signIn_2 = $(' <div><button class="signIn_2"> SignIn</button></div>');
 signIn = $(
-  ' <div class ="signIn"><p id="agreement" >Do not have an account? <a href="file:///D:/MERAKI/Projects/MERAKI_Academy_Project_2/MERAKI_Academy_Project_2/index.html#contact"> SignUp</a></p> </div>'
+  ' <div class ="signIn"><p id="agreement" >Do not have an account? <button class = "SignUp"> SignUp</button></p> </div>'
 );
 body.append(div_2);
 div_2.append(header_2);
@@ -43,19 +47,23 @@ div_2.append(displayName_2);
 div_2.append(password_2);
 div_2.append(signIn_2);
 body.append(signIn);
-signUpPage = $(".signUpPage");
-$('.sign').on('click',()=>{
-    signUpPage.css({
-        "display": "none",
-       
-      });
-      $(".sigInPage").css({
-        "display": "block",
-       
-      });
-})
 
-
+$(".sign").on("click", () => {
+  $(".signUpPage").css({
+    display: "none",
+  });
+  $(".sigInPage").css({
+    display: "block",
+  });
+});
+$(".SignUp").on("click", () => {
+  $(".signUpPage").css({
+    display: "block",
+  });
+  $(".sigInPage").css({
+    display: "none",
+  });
+});
 displayNameForUsers = [
   "A01_Abdalafo",
   "A03_Ahmad",
@@ -115,7 +123,7 @@ let mail = $(".email");
 let pass = $(".password");
 const signUpClick = $(".signUp");
 signUpClick.on("click", () => {
-    obj = {};
+  obj = {};
   for (let i = 0; i < displayNameForUsers.length; i++) {
     if (displayNameForUsers[i].toLowerCase() === text.val().toLowerCase()) {
       obj.displayName = displayNameForUsers[i];
@@ -145,7 +153,12 @@ signUpClick.on("click", () => {
         mail.val("");
         pass.val("");
         console.log(arr);
-      
+        $(".signUpPage").css({
+          display: "none",
+        });
+        $(".mainpage").css({
+          display: "block",
+        });
       }
     }
   }
@@ -155,38 +168,24 @@ let text_2 = $(".displayName_2");
 let pass_2 = $(".password_2");
 const signInClick = $(".signIn_2");
 signInClick.on("click", () => {
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i].displayName.toLowerCase() === text_2.val().toLowerCase()&&
-      (arr[i].pass === pass_2.val())) {
-        text_2.val("");
-        pass_2.val("");
-        console.log(arr[i])
-      }
+  for (let i = 0; i < arr.length; i++) {
+    if (
+      arr[i].displayName.toLowerCase() === text_2.val().toLowerCase() ||
+      (arr[i].email.toLowerCase() === text_2.val().toLowerCase() &&
+        arr[i].pass === pass_2.val())
+    ) {
+      text_2.val("");
+      pass_2.val("");
+      console.log(arr[i]);
+      $(".sigInPage").css({
+        display: "none",
+      });
+      $(".mainpage").css({
+        display: "block",
+      });
     }
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  }
+});
 
 /*const isValidUser =  (loginInfo) => {
     const email = loginInfo.email;
