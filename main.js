@@ -3,10 +3,10 @@ body_1 = $(".signUpPage");
 div = $('<div class="header" ></div>');
 header = $('<div> <h1  class="h1">Meraki Platform</h1></div> ');
 header_2 = $('<div><h2 class="h2">Meraki Platform</h2></div>');
-email = $(' <div><input type="text" placeholder="Email"></div>');
+email = $(' <div><input type="text" placeholder="Email" class = "email"></div>');
 displayName = $(' <div><input class = "displayName" type="text" placeholder="display Name"></div>');
-password = $(' <div><input type="password" placeholder="Password"></div>');
-signUp = $(' <div><button class="signUp"> Sign Up</button></div>');
+password = $(' <div><input type="password" placeholder="Password" class = "password"></div>');
+signUp = $(' <div><button class="signUp" > Sign Up</button></div>');
 agreement = $(
   '<div> <p id="agreement" >By signing up, you agree to our Terms ,<br> Data Policy and Cookies Policy .</p></div>'
 );
@@ -95,35 +95,62 @@ displayNameForUsers = [
   "C28_Hussain",
   "C31_Tawfeeq",
 ];
+arr = []
 obj = {}
 let text = $('.displayName')
+let mail = $('.email')
+let pass = $('.password')
 const signUpClick = $(".signUp");
 signUpClick.on("click",  (username, password) => {
   for(let i = 0 ;i<displayNameForUsers.length;i++) {
-       if (displayNameForUsers[i]===text.val()) {
+       if (displayNameForUsers[i].toLowerCase()===text.val().toLowerCase()) {
      obj.displayName = displayNameForUsers[i]
      text.val("")
+       }
     }
+    if(obj.displayName ===undefined){
+        text.val("wrong display name")
+    }
+  
     
   
-   /* if (password.length <= 8) {
-      return "password must be at least 8 characters long";
+    if (mail.val().length <= 6|| !mail.val().includes('@') || !mail.val().includes('.com')){
+        mail.val("email must be at least 6 characters long");
+    }
+    if (pass.val().length < 8) {
+        pass.val("password must be at least 8 characters long");
+    }
+    if (mail.val().length > 6 && pass.val().length >= 8 && obj.displayName) {
+        if (mail.val().includes('@') && mail.val().includes('.com')) {
+         {
+            obj.email = mail.val()
+            obj.pass = pass.val()
+            arr.push(obj)
+            mail.val("")
+            pass.val("")
+            console.log(arr)
+            location.href = "index_3"
+            
+          }
+        }
     }
   
-    if (username.toLowerCase() === "john_doe") {
-      if (password === "koljgwEA") {
-        return "login successful";
-      }
-    } else if (username.toLowerCase() === "jane_doe") {
-      if (password === "12345678") {
-        return "login successful";
-      }
-    } else {
-      return "username doesn't exist";
-    }
-  
-    return "wrong password";
-  };*/
-  }
-  console.log(obj)
+
 });
+
+/*const isValidUser =  (loginInfo) => {
+    const email = loginInfo.email;
+    const password = loginInfo.password;
+    const username = loginInfo.username.toLowerCase();
+    if (email.length >= 6 && password.length >= 8) {
+      if (email.includes('@') && email.includes('.com')) {
+        if (
+          email === users[username].email &&
+          password === users[username].password
+        ) {
+          return true;
+        }
+      }
+    }
+    return false;
+  };*/
