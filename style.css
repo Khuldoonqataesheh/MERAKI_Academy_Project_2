@@ -20,5 +20,11 @@
 
 
 .signUpPage{
-  
+  display: block;
+}
+.sigInPage{
+    display: none;
+}
+.mainpage{
+
 }
