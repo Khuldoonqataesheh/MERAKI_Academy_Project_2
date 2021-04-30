@@ -1,70 +1,102 @@
 .header {
-  width: 400px;
-  height: 600px;
-  text-align: center;
-  display: grid;
-  background-color: #fff;
-  border: 1px solid #dbdbdb;
-  border-radius: 1px;
-  margin-left: 450px;
+    width: 400px;
+    height: 600px;
+    text-align: center;
+    display: grid;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    margin-left: 450px ;
+
+   
 }
-.signIn {
-  width: 400px;
-  height: 50px;
-  margin-left: 450px;
-  text-align: center;
-  border: 1px solid #dbdbdb;
+.signIn{
+    width: 400px;
+    height: 50px;
+    margin-left: 450px ;
+    text-align: center; 
+    border: 1px solid #dbdbdb;
 }
 
-.signUpPage {
+
+.signUpPage{
   display: none;
 }
-.sigInPage {
-  display: none;
+.sigInPage{
+    display: none;
 }
-.mainpage {
-  display: block;
-}
-
-body {
-  margin: 0px;
-  background-color: #e9ebee;
-  font-family: arial;
+.mainpage{
+display: block;
 }
 
-.headers {
-  background-color: #cfcc0d;
-  padding: 7px 0px 3px 13%;
-  display: inline-block;
-}
-
-.search {
-  background-color: white;
-  width: 1200px;
-  height: 25px;
-  position: relative;
-  bottom: 20px;
-  border-radius: 5px;
-}
-
-.logo {
-  background-image: url("");
-  height: 45px;
-  outline: none;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 24px;
-  position: relative;
-  top: 3px;
-}
-
-#inputText {
-  width: 300px;
-  border-radius: 5px;
-  height: 22px;
-  position: relative;
-  top: 0px;
-  padding-left: 5px;
-  font-size: 14px;
-  border: 0px;
-}
+  
+  .headers {
+    background-color: #0f1950;
+    padding: 7px 0px 3px 13%;
+  }
+  
+  .headers *{
+    display:inline-block;
+  }
+  
+  p {
+    margin: 0px;
+  }
+  
+  .search {
+    background-color: white;
+    width: 450px;
+    height: 24px;
+    position: relative;
+bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .logo {
+    background-image: url('https://www.facebook.com/rsrc.php/v2/ys/r/aVIyzaVqPTE.png');
+        background-repeat: no-repeat;
+      background-size: auto;
+      background-position: 0 -223px;
+      height: 45px;
+      outline: none;
+      overflow: hidden;
+      width: 24px;
+    position: relative;
+    top: 3px;
+  }
+  
+  #inputText {
+     width: 300px;
+    border-radius: 5px;
+      height: 22px;
+      position: relative;
+      top: 0px;
+    padding-left: 5px;
+    font-size: 14px;
+    border: 0px;
+  }
+  
+  .search-icon {
+    background-color: #f6f7f9;
+    height: 100%;
+    width: 50px;
+    text-align: center;
+    float: right;
+  }
+  .search-icon img {
+    height: 15px;
+    width:15px;
+    margin: 10% 0;
+  }
+  
+  .right-side {
+    position: relative;
+    left: 15%;
+  }
+  
+  .leftofright {
+    position: relative;
+    top: -2px;
+  }
+  
+  
