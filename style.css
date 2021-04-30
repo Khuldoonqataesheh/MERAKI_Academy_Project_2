@@ -26,77 +26,49 @@
     display: none;
 }
 .mainpage{
-display: block;
+display: grid;
 }
 
-  
-  .headers {
-    background-color: #0f1950;
-    padding: 7px 0px 3px 13%;
+  .mainpage a:hover {
+    background-color: #ddd;
+    color: black;
   }
   
-  .headers *{
-    display:inline-block;
-  }
-  
-  p {
-    margin: 0px;
-  }
-  
-  .search {
-    background-color: white;
-    width: 450px;
-    height: 24px;
-    position: relative;
-bottom: 20px;
-    border-radius: 5px;
-  }
-  
-  .logo {
-    background-image: url('https://www.facebook.com/rsrc.php/v2/ys/r/aVIyzaVqPTE.png');
-        background-repeat: no-repeat;
-      background-size: auto;
-      background-position: 0 -223px;
-      height: 45px;
-      outline: none;
-      overflow: hidden;
-      width: 24px;
-    position: relative;
-    top: 3px;
-  }
-  
-  #inputText {
-     width: 300px;
-    border-radius: 5px;
-      height: 22px;
-      position: relative;
-      top: 0px;
-    padding-left: 5px;
-    font-size: 14px;
-    border: 0px;
-  }
-  
-  .search-icon {
-    background-color: #f6f7f9;
-    height: 100%;
-    width: 50px;
-    text-align: center;
+  .mainpage a {
     float: right;
+    color: #0f0101;
+    text-align: center;
+    padding: 40px 25px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: 'Mukta', sans-serif;
   }
-  .search-icon img {
-    height: 15px;
-    width:15px;
-    margin: 10% 0;
-  }
-  
-  .right-side {
-    position: relative;
-    left: 15%;
-  }
-  
-  .leftofright {
-    position: relative;
-    top: -2px;
+  .img{
+      width: 30px;
+      height: 30px;
   }
   
-  
+  .mainpage a.home {
+   
+    color: rgba(221,147,29);
+  }
+  #forest{
+    float: left;
+    
+    font-family: 'Mukta', sans-serif;
+    font-size: 30px
+  }
+  #Matters{
+    float: left;
+    font-family: 'Mukta', sans-serif;
+    font-size: 30px;
+    color: rgba(221,147,29);
+  }
+  .posts{
+
+    display: block;
+    width: 400px;
+    height: 200px;
+    text-align: left; 
+    border: 1px solid #dbdbdb;
+}
