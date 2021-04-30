@@ -32,7 +32,7 @@ body_1.append(signIn);
 div_2 = $('<div class="header" ></div>');
 header_2 = $('<div> <h1  class="h1">Meraki Platform</h1></div> ');
 displayName_2 = $(
-  ' <div><input class = "displayName_2" type="text" placeholder="display Name"></div>'
+  ' <div><input class = "displayName_2" type="text" placeholder="Email or Display Name"></div>'
 );
 password_2 = $(
   ' <div><input type="password" placeholder="Password" class = "password_2"></div>'

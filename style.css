@@ -1,30 +1,70 @@
 .header {
-    width: 400px;
-    height: 600px;
-    text-align: center;
-    display: grid;
-    background-color: #fff;
-    border: 1px solid #dbdbdb;
-    border-radius: 1px;
-    margin-left: 450px ;
-
-   
+  width: 400px;
+  height: 600px;
+  text-align: center;
+  display: grid;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 1px;
+  margin-left: 450px;
 }
-.signIn{
-    width: 400px;
-    height: 50px;
-    margin-left: 450px ;
-    text-align: center; 
-    border: 1px solid #dbdbdb;
+.signIn {
+  width: 400px;
+  height: 50px;
+  margin-left: 450px;
+  text-align: center;
+  border: 1px solid #dbdbdb;
 }
 
-
-.signUpPage{
+.signUpPage {
+  display: none;
+}
+.sigInPage {
+  display: none;
+}
+.mainpage {
   display: block;
 }
-.sigInPage{
-    display: none;
+
+body {
+  margin: 0px;
+  background-color: #e9ebee;
+  font-family: arial;
 }
-.mainpage{
-display: none;
+
+.headers {
+  background-color: #cfcc0d;
+  padding: 7px 0px 3px 13%;
+  display: inline-block;
+}
+
+.search {
+  background-color: white;
+  width: 1200px;
+  height: 25px;
+  position: relative;
+  bottom: 20px;
+  border-radius: 5px;
+}
+
+.logo {
+  background-image: url("");
+  height: 45px;
+  outline: none;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 24px;
+  position: relative;
+  top: 3px;
+}
+
+#inputText {
+  width: 300px;
+  border-radius: 5px;
+  height: 22px;
+  position: relative;
+  top: 0px;
+  padding-left: 5px;
+  font-size: 14px;
+  border: 0px;
 }
