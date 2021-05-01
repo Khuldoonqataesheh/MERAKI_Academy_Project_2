@@ -20,7 +20,7 @@ body {
 }
 
 .signUpPage {
-  display: none;
+  display: block;
 }
 .wrong{
     display: none;
@@ -135,6 +135,7 @@ border-radius: 2px ;
 
 .sigInPage {
   display: none;
+  background-color: #fafafa;
 }
 
 .displayName_2{
@@ -178,7 +179,9 @@ border-radius: 2px ;
     font-weight: bold; 
   }
 .mainpage {
-  display: block;
+  display: none;
+  background-color: #fafafa;
+ 
 }
 
 .mainpage a:hover {
@@ -235,21 +238,23 @@ border-radius: 2px ;
   color: rgba(221, 147, 29);
 }
 .posts {
-  display: block;
+  display: none;
   text-align: left;
   display: none;
 }
 .top{
     display: flex;
-    border-bottom: solid black;
+    border-bottom: solid  rgba(221, 147, 29);
     
 }
 .status {
   width: 350px;
   height: 100px;
   margin-left: 985px;
+  background-color: #fafafa;
+border-radius: 2px ;
 }
-#publish {
+.publish {
   float: right;
   color: #0f0101;
   text-align: center;
@@ -259,22 +264,48 @@ border-radius: 2px ;
   font-family: "Mukta", sans-serif;
 }
 .addposts {
-  width: 450px;
-  height: 300px;
-  border: solid black;
-  margin: 3px;
+    display: none;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 1px 1px rgb(119, 115, 115);
+  width: 400px;
+  height: auto;
+  margin-top: 10px;
+  margin-left: 500px;
  
 }
-.name{
-    display: block;
-   
+
+#name{
+    font-size: 17px;
+    font-weight: bold;
+    font-family: "Mukta", sans-serif;
+
+   padding: 10px;
 }
 
 .profilePic {
- 
+padding-left: 10px;
+padding-top: 3px;
   width: 30px;
   height: 30px;
-  padding-inline-start: 2px;
-  margin-top: 4px;
   border-radius: 35px;
+  
 }
+#question{
+    margin-top: 10px;
+    border-top: 2px solid rgba(221, 147, 29);
+padding: 10px;
+font-size: 15px;
+font-family: "Mukta", sans-serif;
+}
+.like-counter {
+    color:  rgba(221, 147, 29);
+    text-decoration: none;
+    margin-left: 10px;
+    
+  }
+  .liked {
+    margin-left: 10px;
+    font-weight: bold;
+    color:  rgba(221, 147, 29);
+  }
+  

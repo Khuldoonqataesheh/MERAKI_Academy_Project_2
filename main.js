@@ -247,3 +247,25 @@ $(".plus").on("click", () => {
     display: "block",
   });
 });
+$(".publish").on("click", () => {
+    $(".posts").css({
+      display: "none",
+    });
+    $(".addposts").css({
+      display: "block",
+    });
+  });
+  let x = $('.status').value
+document.getElementById('name').innerHTML ='A12_Khuldoon'
+document.getElementById('question').innerHTML = 'like if you are member of meraki academy'
+console.log(x)
+
+let clicks = 0;
+
+document.getElementById("clicks").innerHTML = `    ${clicks}`;
+
+$('.like-counter').click(function() {
+  clicks += 1;
+  document.getElementById("clicks").innerHTML = `    ${clicks}`;
+  $('.like-counter').addClass("liked");
+});
