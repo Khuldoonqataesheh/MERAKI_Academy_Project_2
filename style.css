@@ -65,10 +65,21 @@ display: grid;
     color: rgba(221,147,29);
   }
   .posts{
-
     display: block;
-    width: 400px;
-    height: 200px;
     text-align: left; 
-    border: 1px solid #dbdbdb;
+   
+}
+.status{
+width: 350px;
+height: 100px;
+margin-left: 985px;
+}
+#publish{
+    float: right;
+    color: #0f0101;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: 'Mukta', sans-serif;
 }
