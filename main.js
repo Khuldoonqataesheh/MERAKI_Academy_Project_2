@@ -1,7 +1,7 @@
 body = $(".sigInPage");
 body_1 = $(".signUpPage");
 div = $('<div class="header" ></div>');
-header = $('<div> <h1  class="h1">Meraki Platform</h1></div> ');
+header = $('<div> <h1  class="h1"><span class = "h5">MERAKI</span> Platform</h1></div> ');
 header_2 = $('<div><p class="h3">Sign up to join <span class = "h2">MERAKI</span> family .</p></div>');
 email = $(
   ' <div><input type="text" placeholder="Email" class = "email"></div>'
@@ -30,7 +30,8 @@ div.append(agreement);
 body_1.append(signIn);
 
 div_2 = $('<div class="header" ></div>');
-header_2 = $('<div> <h1  class="h1">Meraki Platform</h1></div> ');
+header_3 = $('<div> <h1  class="h1"><span class = "h5">MERAKI</span> Platform</h1></div> ');
+header_4 = $('<div><p class="h3">If you are a member of <span class = "h2">MERAKI</span> ,login .</p></div>');
 displayName_2 = $(
   ' <div><input class = "displayName_2" type="text" placeholder="Email or Display Name"></div>'
 );
@@ -39,10 +40,11 @@ password_2 = $(
 );
 signIn_2 = $(' <div><button class="signIn_2"> SignIn</button></div>');
 signIn = $(
-  ' <div class ="signIn"><p id="agreement" >Do not have an account? <button class = "SignUp"> SignUp</button></p> </div>'
+  ' <div class ="signIn"><p id="agreement" >Do not have an account? <a class = "SignUp"  href="#contact"> SignUp</button></a> </div>'
 );
 body.append(div_2);
-div_2.append(header_2);
+div_2.append(header_3);
+div_2.append(header_4);
 div_2.append(displayName_2);
 div_2.append(password_2);
 div_2.append(signIn_2);

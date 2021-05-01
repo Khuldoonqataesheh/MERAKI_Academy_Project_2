@@ -20,13 +20,19 @@ body {
 }
 
 .signUpPage {
-  display: block;
+  display: none;
 }
 .h1 {
   text-align: center;
-  color: rgba(221, 147, 29);
+  color: black;
   font-family: "Mukta", sans-serif;
   text-shadow: 1px 1px #8e8e8e;
+}
+.h5{
+    text-align: center;
+    color:  rgba(221, 147, 29);
+    font-family: "Mukta", sans-serif;
+    text-shadow: 1px 1px #8e8e8e;   
 }
 .h2 {
   text-align: center;
@@ -56,31 +62,101 @@ body {
   font-family: "Mukta", sans-serif;
 }
 .signUp {
-    
     border: none;
     color: white;
-   
     text-align: center;
-   
     margin: 4px 2px;
     opacity: 0.6;
     transition: 0.3s;
-  
-   
     background-color: rgba(221, 147, 29);
-   
     padding: 10px 20px;
     font-size: 13px;
     cursor: pointer;
     opacity: 0.6;
     transition: 0.3s;
   }
+
   .signUp:hover {opacity: 1}
   
- 
+  .sign{
+    text-decoration: none;
+    color: rgba(221, 147, 29);
+    font-weight: bold;
+  }
+
+  .email{
+      width: 256px ;
+      height: 25px;
+      margin-top:-10px;
+margin-bottom:-15px;
+background-color: #fafafa;
+border-radius: 2px ;
+
+  }
+
+  .displayName{
+    width: 256px ;
+    height: 25px;
+    margin-top:-10px;
+margin-bottom:-15px;
+background-color: #fafafa;
+border-radius: 2px ;
+  }
+
+ .password{
+    width: 256px ;
+    height: 25px;
+    margin-top:-10px;
+margin-bottom:-15px;
+background-color: #fafafa;
+border-radius: 2px ;
+
+ }
+
 .sigInPage {
-  display: none;
+  display: block;
 }
+
+.displayName_2{
+    width: 256px ;
+    height: 25px;
+    margin-top:-10px;
+margin-bottom:-15px;
+background-color: #fafafa;
+border-radius: 2px ;
+}
+
+.password_2{
+    width: 256px ;
+    height: 25px;
+    margin-top:-10px;
+margin-bottom:-15px;
+background-color: #fafafa;
+border-radius: 2px ;
+}
+
+.signIn_2{
+    border: none;
+    color: white;
+    text-align: center;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    background-color: rgba(221, 147, 29);
+    padding: 10px 20px;
+    font-size: 13px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+
+  .signIn_2:hover {opacity: 1}
+
+  .SignUp{
+    text-decoration: none;
+    color: rgba(221, 147, 29);
+    font-weight: bold; 
+  }
 .mainpage {
   display: none;
 }
