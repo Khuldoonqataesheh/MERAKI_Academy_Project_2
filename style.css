@@ -22,6 +22,26 @@ body {
 .signUpPage {
   display: none;
 }
+.wrong{
+    display: none;
+color: red;
+}
+.wrong_2{
+    display: none;
+    color: red;
+
+}
+.wrong_3{
+    display: none;
+    color: red;
+
+}
+.wrong_4{
+    display: none;
+    color: red;
+
+}
+
 .h1 {
   text-align: center;
   color: black;
@@ -77,7 +97,7 @@ body {
   }
 
   .signUp:hover {opacity: 1}
-  
+
   .sign{
     text-decoration: none;
     color: rgba(221, 147, 29);
@@ -114,7 +134,7 @@ border-radius: 2px ;
  }
 
 .sigInPage {
-  display: block;
+  display: none;
 }
 
 .displayName_2{
@@ -158,7 +178,7 @@ border-radius: 2px ;
     font-weight: bold; 
   }
 .mainpage {
-  display: none;
+  display: block;
 }
 
 .mainpage a:hover {
@@ -166,15 +186,34 @@ border-radius: 2px ;
   color: black;
 }
 
-.mainpage a {
-  float: right;
+.mainpage a.home {
+ margin-left: 880px;
   color: #0f0101;
   text-align: center;
-  padding: 40px 25px;
+  padding: 30px 25px;
   text-decoration: none;
   font-size: 17px;
   font-family: "Mukta", sans-serif;
 }
+
+   .mainpage a.plus {
+    
+     color: #0f0101;
+     text-align: center;
+     padding: 30px 25px;
+     text-decoration: none;
+     font-size: 17px;
+     font-family: "Mukta", sans-serif;
+   }
+   .mainpage a.logout {
+    
+     color: #0f0101;
+     text-align: center;
+     padding: 30px 25px;
+     text-decoration: none;
+     font-size: 17px;
+     font-family: "Mukta", sans-serif;
+   }
 .img {
   width: 30px;
   height: 30px;
@@ -200,6 +239,11 @@ border-radius: 2px ;
   text-align: left;
   display: none;
 }
+.top{
+    display: flex;
+    border-bottom: solid black;
+    
+}
 .status {
   width: 350px;
   height: 100px;
@@ -218,14 +262,19 @@ border-radius: 2px ;
   width: 450px;
   height: 300px;
   border: solid black;
+  margin: 3px;
+ 
 }
+.name{
+    display: block;
+   
+}
+
 .profilePic {
-  width: 40px;
-  height: 40px;
-  padding: 4px;
+ 
+  width: 30px;
+  height: 30px;
+  padding-inline-start: 2px;
+  margin-top: 4px;
   border-radius: 35px;
-}
-.name {
-  display: inline-block;
-  white-space: nowrap;
 }

@@ -1,16 +1,27 @@
 body = $(".sigInPage");
 body_1 = $(".signUpPage");
 div = $('<div class="header" ></div>');
-header = $('<div> <h1  class="h1"><span class = "h5">MERAKI</span> Platform</h1></div> ');
-header_2 = $('<div><p class="h3">Sign up to join <span class = "h2">MERAKI</span> family .</p></div>');
+header = $(
+  '<div> <h1  class="h1"><span class = "h5">MERAKI</span> Platform</h1></div> '
+);
+header_2 = $(
+  '<div><p class="h3">Sign up to join <span class = "h2">MERAKI</span> family .</p></div>'
+);
 email = $(
   ' <div><input type="text" placeholder="Email" class = "email"></div>'
+);
+wrong_2 = $(
+  '<div class = "wrong_2">**email must be at least 6 characters long</div>'
 );
 displayName = $(
   ' <div><input class = "displayName" type="text" placeholder="Display Name"></div>'
 );
+wrong = $('<div class = "wrong">**wrong display name</div>');
 password = $(
   ' <div><input type="password" placeholder="Password" class = "password"></div>'
+);
+wrong_3 = $(
+  '<div class = "wrong_3">**password must be at least 8 characters long</div>'
 );
 signUp = $(' <div><button class="signUp" > Sign Up</button></div>');
 agreement = $(
@@ -23,21 +34,29 @@ body_1.append(div);
 div.append(header);
 div.append(header_2);
 div.append(displayName);
+div.append(wrong);
 div.append(email);
+div.append(wrong_2);
 div.append(password);
+div.append(wrong_3);
 div.append(signUp);
 div.append(agreement);
 body_1.append(signIn);
 
 div_2 = $('<div class="header" ></div>');
-header_3 = $('<div> <h1  class="h1"><span class = "h5">MERAKI</span> Platform</h1></div> ');
-header_4 = $('<div><p class="h3">If you are a member of <span class = "h2">MERAKI</span> ,login .</p></div>');
+header_3 = $(
+  '<div> <h1  class="h1"><span class = "h5">MERAKI</span> Platform</h1></div> '
+);
+header_4 = $(
+  '<div><p class="h3">If you are a member of <span class = "h2">MERAKI</span> ,login .</p></div>'
+);
 displayName_2 = $(
   ' <div><input class = "displayName_2" type="text" placeholder="Email or Display Name"></div>'
 );
 password_2 = $(
   ' <div><input type="password" placeholder="Password" class = "password_2"></div>'
 );
+wrong_4 = $('<div class = "wrong_4">**wrong display name or password</div>');
 signIn_2 = $(' <div><button class="signIn_2"> SignIn</button></div>');
 signIn = $(
   ' <div class ="signIn"><p id="agreement" >Do not have an account? <a class = "SignUp"  href="#contact"> SignUp</button></a> </div>'
@@ -47,6 +66,7 @@ div_2.append(header_3);
 div_2.append(header_4);
 div_2.append(displayName_2);
 div_2.append(password_2);
+div_2.append(wrong_4);
 div_2.append(signIn_2);
 body.append(signIn);
 
@@ -129,11 +149,17 @@ signUpClick.on("click", () => {
   for (let i = 0; i < displayNameForUsers.length; i++) {
     if (displayNameForUsers[i].toLowerCase() === text.val().toLowerCase()) {
       obj.displayName = displayNameForUsers[i];
-      text.val("");
+
+      wrong.css({
+        display: "none",
+      });
     }
   }
   if (obj.displayName === undefined) {
-    text.val("wrong display name");
+    text.val("");
+    wrong.css({
+      display: "block",
+    });
   }
 
   if (
@@ -141,14 +167,26 @@ signUpClick.on("click", () => {
     !mail.val().includes("@") ||
     !mail.val().includes(".com")
   ) {
-    mail.val("email must be at least 6 characters long");
+    mail.val("");
+    wrong_2.css({
+      display: "block",
+    });
   }
   if (pass.val().length < 8) {
-    pass.val("password must be at least 8 characters long");
+    pass.val("");
+    wrong_3.css({
+      display: "block",
+    });
   }
-  if (mail.val().length > 6 && pass.val().length >= 8 && obj.displayName) {
-    if (mail.val().includes("@") && mail.val().includes(".com")) {
+  if (mail.val().includes("@") && mail.val().includes(".com")) {
+    wrong_2.css({
+      display: "none",
+    });
+    if (mail.val().length > 6 && pass.val().length >= 8 && obj.displayName) {
       {
+        wrong_3.css({
+          display: "none",
+        });
         obj.email = mail.val();
         obj.pass = pass.val();
         arr.push(obj);
@@ -172,12 +210,13 @@ const signInClick = $(".signIn_2");
 signInClick.on("click", () => {
   for (let i = 0; i < arr.length; i++) {
     if (
-      arr[i].displayName.toLowerCase() === text_2.val().toLowerCase() ||
-      (arr[i].email.toLowerCase() === text_2.val().toLowerCase() &&
-        arr[i].pass === pass_2.val())
+     (arr[i].displayName.toLowerCase() === text_2.val().toLowerCase() ||
+    arr[i].email.toLowerCase() === text_2.val().toLowerCase() )&&
+        arr[i].pass === pass_2.val()
     ) {
-      text_2.val("");
-      pass_2.val("");
+        wrong_4.css({
+            display: "none",
+          });
       console.log(arr[i]);
       $(".sigInPage").css({
         display: "none",
@@ -185,6 +224,12 @@ signInClick.on("click", () => {
       $(".mainpage").css({
         display: "block",
       });
+    }else {
+        text_2.val("");
+        pass_2.val("");
+        wrong_4.css({
+          display: "block",
+        });
     }
   }
 });
