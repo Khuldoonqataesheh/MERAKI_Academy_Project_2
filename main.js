@@ -2,7 +2,7 @@ body = $(".sigInPage");
 body_1 = $(".signUpPage");
 div = $('<div class="header" ></div>');
 header = $('<div> <h1  class="h1">Meraki Platform</h1></div> ');
-header_2 = $('<div><h2 class="h2">Meraki Platform</h2></div>');
+header_2 = $('<div><p class="h3">Sign up to join <span class = "h2">MERAKI</span> family .</p></div>');
 email = $(
   ' <div><input type="text" placeholder="Email" class = "email"></div>'
 );
@@ -14,10 +14,10 @@ password = $(
 );
 signUp = $(' <div><button class="signUp" > Sign Up</button></div>');
 agreement = $(
-  '<div> <p id="agreement" >By signing up, you agree to our Terms ,<br> Data Policy and Cookies Policy .</p></div>'
+  '<div> <p class="agreement" >By signing up, you agree to our Terms ,<br> Data Policy and Cookies Policy .</p></div>'
 );
 signIn = $(
-  ' <div class ="signIn"><p id="agreement" >Have an account? <button class="sign" > SignIn</button></p> </div>'
+  ' <div class ="signIn"><p id="agreement" >Have an account? <a class="sign" href="#contact"> SignIn</a></p> </div>'
 );
 body_1.append(div);
 div.append(header);
@@ -187,19 +187,16 @@ signInClick.on("click", () => {
   }
 });
 
-/*const isValidUser =  (loginInfo) => {
-    const email = loginInfo.email;
-    const password = loginInfo.password;
-    const username = loginInfo.username.toLowerCase();
-    if (email.length >= 6 && password.length >= 8) {
-      if (email.includes('@') && email.includes('.com')) {
-        if (
-          email === users[username].email &&
-          password === users[username].password
-        ) {
-          return true;
-        }
-      }
-    }
-    return false;
-  };*/
+$(".logout").on("click", () => {
+  $(".mainpage").css({
+    display: "none",
+  });
+  $(".sigInPage").css({
+    display: "block",
+  });
+});
+$(".plus").on("click", () => {
+  $(".posts").css({
+    display: "block",
+  });
+});

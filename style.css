@@ -1,85 +1,155 @@
+body {
+  background-color: #fafafa;
+}
 .header {
-    width: 400px;
-    height: 600px;
-    text-align: center;
-    display: grid;
-    background-color: #fff;
-    border: 1px solid #dbdbdb;
-    border-radius: 1px;
-    margin-left: 450px ;
+  width: 400px;
+  height: 600px;
+  text-align: center;
+  display: grid;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 1px;
+  margin-left: 450px;
+}
+.signIn {
+  width: 400px;
+  height: 50px;
+  margin-left: 450px;
+  text-align: center;
+  border: 1px solid #dbdbdb;
+}
 
+.signUpPage {
+  display: block;
+}
+.h1 {
+  text-align: center;
+  color: rgba(221, 147, 29);
+  font-family: "Mukta", sans-serif;
+  text-shadow: 1px 1px #8e8e8e;
+}
+.h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: medium;
+  color: rgba(221, 147, 29);
+  font-family: "Mukta", sans-serif;
+  text-shadow: 1px 1px #8e8e8e;
+}
+.h3 {
+  text-align: center;
+  font-size: medium;
+  font-weight: bold;
+  color: #8e8e8e;
+  font-family: "Mukta", sans-serif;
+}
+.agreement {
+  text-align: center;
+  font-size: 15px;
+  color: #8e8e8e;
+  font-family: "Mukta", sans-serif;
+}
+.signIn {
+  text-align: center;
+  font-size: 14px;
+  color: #1f1c1c;
+  font-family: "Mukta", sans-serif;
+}
+.signUp {
+    
+    border: none;
+    color: white;
    
-}
-.signIn{
-    width: 400px;
-    height: 50px;
-    margin-left: 450px ;
-    text-align: center; 
-    border: 1px solid #dbdbdb;
-}
-
-
-.signUpPage{
+    text-align: center;
+   
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+  
+   
+    background-color: rgba(221, 147, 29);
+   
+    padding: 10px 20px;
+    font-size: 13px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+  .signUp:hover {opacity: 1}
+  
+ 
+.sigInPage {
   display: none;
 }
-.sigInPage{
-    display: none;
-}
-.mainpage{
-display: grid;
+.mainpage {
+  display: none;
 }
 
-  .mainpage a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .mainpage a {
-    float: right;
-    color: #0f0101;
-    text-align: center;
-    padding: 40px 25px;
-    text-decoration: none;
-    font-size: 17px;
-    font-family: 'Mukta', sans-serif;
-  }
-  .img{
-      width: 30px;
-      height: 30px;
-  }
-  
-  .mainpage a.home {
-   
-    color: rgba(221,147,29);
-  }
-  #forest{
-    float: left;
-    
-    font-family: 'Mukta', sans-serif;
-    font-size: 30px
-  }
-  #Matters{
-    float: left;
-    font-family: 'Mukta', sans-serif;
-    font-size: 30px;
-    color: rgba(221,147,29);
-  }
-  .posts{
-    display: block;
-    text-align: left; 
-   
+.mainpage a:hover {
+  background-color: #ddd;
+  color: black;
 }
-.status{
-width: 350px;
-height: 100px;
-margin-left: 985px;
+
+.mainpage a {
+  float: right;
+  color: #0f0101;
+  text-align: center;
+  padding: 40px 25px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: "Mukta", sans-serif;
 }
-#publish{
-    float: right;
-    color: #0f0101;
-    text-align: center;
-    padding: 15px 20px;
-    text-decoration: none;
-    font-size: 17px;
-    font-family: 'Mukta', sans-serif;
+.img {
+  width: 30px;
+  height: 30px;
+}
+
+.mainpage a.home {
+  color: rgba(221, 147, 29);
+}
+#forest {
+  float: left;
+
+  font-family: "Mukta", sans-serif;
+  font-size: 30px;
+}
+#Matters {
+  float: left;
+  font-family: "Mukta", sans-serif;
+  font-size: 30px;
+  color: rgba(221, 147, 29);
+}
+.posts {
+  display: block;
+  text-align: left;
+  display: none;
+}
+.status {
+  width: 350px;
+  height: 100px;
+  margin-left: 985px;
+}
+#publish {
+  float: right;
+  color: #0f0101;
+  text-align: center;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: "Mukta", sans-serif;
+}
+.addposts {
+  width: 450px;
+  height: 300px;
+  border: solid black;
+}
+.profilePic {
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  border-radius: 35px;
+}
+.name {
+  display: inline-block;
+  white-space: nowrap;
 }
