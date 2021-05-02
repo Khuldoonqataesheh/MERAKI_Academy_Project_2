@@ -20,7 +20,7 @@ body {
 }
 
 .signUpPage {
-  display: block;
+  display: none;
 }
 .wrong{
     display: none;
@@ -179,7 +179,7 @@ border-radius: 2px ;
     font-weight: bold; 
   }
 .mainpage {
-  display: none;
+  display: block;
   background-color: #fafafa;
  
 }

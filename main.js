@@ -11,7 +11,7 @@ email = $(
   ' <div><input type="text" placeholder="Email" class = "email"></div>'
 );
 wrong_2 = $(
-  '<div class = "wrong_2">**email must be at least 6 characters long</div>'
+  '<div class = "wrong_2">**email must be at least 6 characters long & contain (@ / .com)</div>'
 );
 displayName = $(
   ' <div><input class = "displayName" type="text" placeholder="Display Name"></div>'
@@ -144,6 +144,7 @@ let text = $(".displayName");
 let mail = $(".email");
 let pass = $(".password");
 const signUpClick = $(".signUp");
+let x
 signUpClick.on("click", () => {
   obj = {};
   for (let i = 0; i < displayNameForUsers.length; i++) {
@@ -184,6 +185,8 @@ signUpClick.on("click", () => {
     });
     if (mail.val().length > 6 && pass.val().length >= 8 && obj.displayName) {
       {
+      x= text.val()
+
         wrong_3.css({
           display: "none",
         });
@@ -214,6 +217,7 @@ signInClick.on("click", () => {
     arr[i].email.toLowerCase() === text_2.val().toLowerCase() )&&
         arr[i].pass === pass_2.val()
     ) {
+      x= text_2.val()
         wrong_4.css({
             display: "none",
           });
@@ -234,6 +238,8 @@ signInClick.on("click", () => {
   }
 });
 
+
+
 $(".logout").on("click", () => {
   $(".mainpage").css({
     display: "none",
@@ -247,7 +253,22 @@ $(".plus").on("click", () => {
     display: "block",
   });
 });
+
+
 $(".publish").on("click", () => {
+  addPosts = $('<div class="addposts"></div>')
+  profilePic = $('<img class="profilePic" src="user.png" alt="">')
+  name_1 = $('<span id="name"></span>')
+  question= $('<div id="question"></div>')
+  like_counter = $('<a href="#" class="like-counter">Like</a><span class="click-text"><a id="clicks">  </a></span>')
+  $('.mainpage').append(addPosts);
+  addPosts.append(profilePic);
+  addPosts.append(name_1);
+  addPosts.append(question);
+  addPosts.append(like_counter);
+  document.getElementById('name').innerHTML=x
+  document.getElementById('question').innerHTML= $('.status').val()
+  $('.status').val('')
     $(".posts").css({
       display: "none",
     });
@@ -255,14 +276,11 @@ $(".publish").on("click", () => {
       display: "block",
     });
   });
-  let x = $('.status').value
-document.getElementById('name').innerHTML ='A12_Khuldoon'
-document.getElementById('question').innerHTML = 'like if you are member of meraki academy'
-console.log(x)
+  
 
 let clicks = 0;
 
-document.getElementById("clicks").innerHTML = `    ${clicks}`;
+//document.getElementById("clicks").innerHTML = `    ${clicks}`;
 
 $('.like-counter').click(function() {
   clicks += 1;
