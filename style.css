@@ -21,6 +21,7 @@ body {
 
 .signUpPage {
   display: none;
+  position: relative;
 }
 .wrong{
     display: none;
@@ -248,11 +249,18 @@ border-radius: 2px ;
     
 }
 .status {
-  width: 350px;
-  height: 100px;
+  border: none;
+  padding: 20px;
+  padding-right: 22px;
+  padding-bottom: 50px;
+  
   margin-left: 985px;
   background-color: #fafafa;
 border-radius: 2px ;
+font-size: 20px;
+}
+.status:focus{
+  outline: none;
 }
 .publish {
   float: right;
@@ -300,12 +308,26 @@ font-family: "Mukta", sans-serif;
 .like-counter {
     color:  rgba(221, 147, 29);
     text-decoration: none;
+    font-family: "Mukta", sans-serif;
     margin-left: 10px;
     
   }
   .liked {
     margin-left: 10px;
     font-weight: bold;
+    font-family: "Mukta", sans-serif;
     color:  rgba(221, 147, 29);
   }
+  #date{
+    font-size: small;
+    color:  #8e8e8e;
+    font-family: "Mukta", sans-serif;
+    text-shadow: #8e8e8e;
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-left: 50px;
+  }
+  
   

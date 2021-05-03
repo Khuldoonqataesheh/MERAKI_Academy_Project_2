@@ -30,6 +30,7 @@ agreement = $(
 signIn = $(
   ' <div class ="signIn"><p id="agreement" >Have an account? <a class="sign" href="#contact"> SignIn</a></p> </div>'
 );
+
 body_1.append(div);
 div.append(header);
 div.append(header_2);
@@ -193,6 +194,7 @@ signUpClick.on("click", () => {
         obj.email = mail.val();
         obj.pass = pass.val();
         arr.push(obj);
+        localStorage.setItem("arr",arr)
         mail.val("");
         pass.val("");
         console.log(arr);
@@ -212,12 +214,15 @@ let pass_2 = $(".password_2");
 const signInClick = $(".signIn_2");
 signInClick.on("click", () => {
   for (let i = 0; i < arr.length; i++) {
+    localStorage.getItem("arr")
     if (
      (arr[i].displayName.toLowerCase() === text_2.val().toLowerCase() ||
     arr[i].email.toLowerCase() === text_2.val().toLowerCase() )&&
         arr[i].pass === pass_2.val()
     ) {
       x= text_2.val()
+      text_2.val("");
+        pass_2.val("");
         wrong_4.css({
             display: "none",
           });
@@ -228,19 +233,23 @@ signInClick.on("click", () => {
       $(".mainpage").css({
         display: "block",
       });
-    }else {
-        text_2.val("");
-        pass_2.val("");
+    }
+    
+    
+       
         wrong_4.css({
           display: "block",
         });
-    }
+    
   }
 });
 
 
 
 $(".logout").on("click", () => {
+  wrong_4.css({
+    display: "none",
+  });
   $(".mainpage").css({
     display: "none",
   });
@@ -254,20 +263,30 @@ $(".plus").on("click", () => {
   });
 });
 
-
+let clicks = 0;
 $(".publish").on("click", () => {
   addPosts = $('<div class="addposts"></div>')
   profilePic = $('<img class="profilePic" src="user.png" alt="">')
   name_1 = $('<span id="name"></span>')
+  date = $('<p id="date"></p>')
   question= $('<div id="question"></div>')
   like_counter = $('<a href="#" class="like-counter">Like</a><span class="click-text"><a id="clicks">  </a></span>')
-  $('.mainpage').append(addPosts);
+  $('.prepend').prepend(addPosts);
   addPosts.append(profilePic);
   addPosts.append(name_1);
+  addPosts.append(date);
   addPosts.append(question);
   addPosts.append(like_counter);
   document.getElementById('name').innerHTML=x
+  document.getElementById('date').innerHTML=Date().split(' ').splice(0,5).join(' ')
   document.getElementById('question').innerHTML= $('.status').val()
+  document.getElementById("clicks").innerHTML = `    ${clicks}`;
+ 
+$('.like-counter').click(function() {
+  clicks += 1;
+  document.getElementById("clicks").innerHTML = `    ${clicks}`;
+  $('.like-counter').addClass("liked");
+});
   $('.status').val('')
     $(".posts").css({
       display: "none",
@@ -276,14 +295,3 @@ $(".publish").on("click", () => {
       display: "block",
     });
   });
-  
-
-let clicks = 0;
-
-//document.getElementById("clicks").innerHTML = `    ${clicks}`;
-
-$('.like-counter').click(function() {
-  clicks += 1;
-  document.getElementById("clicks").innerHTML = `    ${clicks}`;
-  $('.like-counter').addClass("liked");
-});
