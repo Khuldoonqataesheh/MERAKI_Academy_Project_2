@@ -265,37 +265,51 @@ $(".publish").on("click", () => {
   name_1 = $('<span id="name"></span>');
   date = $('<p id="date"></p>');
   question = $('<div id="question"></div>');
-  like_counter = $(
+  like = $("<button class = 'like' data-inline='true'> Like </button>")
+  /*like_counter = $(
     '<a href="#" class="like-counter">Like</a><span class="click-text"><a id="clicks">  </a></span>'
-  );
-  comment = $("<button>comment</button>");
-  ul = $('<ul class = "comment"></ul>');
-  writeComment = $('<input id = "answar" type="text" placeholder="Write a comment">')
-  add = $('<button id = "add" >add</button>');
-  li = $("<li><div></div></li>");
-  profilePic_2 = $('<img class="profilePic_2" src="user.png" alt="">');
-  name_2 = $('<span id="name_2"></span>');
-  answer = $('<div id="answer"></div>');
+  );*/
+  comment = $("<button class = 'comm' data-inline='true'> comment </button>");
+  pre = $(' <div id="pre"></div>')
+ 
+  
+  
   $(".prepend").prepend(addPosts);
   addPosts.append(profilePic);
   addPosts.append(name_1);
   addPosts.append(date);
   addPosts.append(question);
-  addPosts.append(like_counter);
+  addPosts.append(like);
   addPosts.append(comment);
+  addPosts.append(pre);
+
+
   comment.on("click", () => {
-    addPosts.append(ul);
+   
+    ul = $('<ul class = "comment"></ul>');
+    writeComment = $('<input id = "answar" type="text" placeholder="Write a comment">')
+    add = $('<button id = "add" >add</button>');
+  
+    $('#pre').prepend(ul);
     ul.append(writeComment);
     ul.append(add);
+    add.on("click", () => {
+      li = $("<li class = 'li'></li>");
+    profilePic_2 = $('<img class="profilePic_2" src="user.png" alt="">');
+    name_2 = $('<span id="name_2"></span>');
+    answer = $('<div id="answer"></div>');
+   
+      ul.append(li);
+      li.append(profilePic_2);
+      li.append(name_2);
+      li.append(answer);
+      document.getElementById("name_2").innerHTML = x;
+      document.getElementById("answer").innerHTML = $("#answar").val();
+       writeComment.remove()
+    add.remove()
+    });
   });
-  add.on("click", () => {
-    ul.append(li);
-    li.append(profilePic_2);
-    li.append(name_2);
-    li.append(answer);
-    document.getElementById("name_2").innerHTML = x;
-    document.getElementById("answer").innerHTML = $("#answar").val();
-  });
+  
 
   document.getElementById("name").innerHTML = x;
 
@@ -304,13 +318,13 @@ $(".publish").on("click", () => {
     .splice(0, 5)
     .join(" ");
   document.getElementById("question").innerHTML = $(".status").val();
-  document.getElementById("clicks").innerHTML = `    ${clicks}`;
+//  document.getElementById("clicks").innerHTML = `    ${clicks}`;
 
-  $(".like-counter").click(function () {
+ /* $(".like-counter").click(function () {
     clicks += 1;
     document.getElementById("clicks").innerHTML = `    ${clicks}`;
     $(".like-counter").addClass("liked");
-  });
+  });*/
   $(".status").val("");
   $(".posts").css({
     display: "none",
