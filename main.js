@@ -145,7 +145,7 @@ let text = $(".displayName");
 let mail = $(".email");
 let pass = $(".password");
 const signUpClick = $(".signUp");
-let x
+let x;
 signUpClick.on("click", () => {
   obj = {};
   for (let i = 0; i < displayNameForUsers.length; i++) {
@@ -186,7 +186,7 @@ signUpClick.on("click", () => {
     });
     if (mail.val().length > 6 && pass.val().length >= 8 && obj.displayName) {
       {
-      x= text.val()
+        x = text.val();
 
         wrong_3.css({
           display: "none",
@@ -194,7 +194,7 @@ signUpClick.on("click", () => {
         obj.email = mail.val();
         obj.pass = pass.val();
         arr.push(obj);
-        localStorage.setItem("arr",arr)
+        localStorage.setItem("arr", arr);
         mail.val("");
         pass.val("");
         console.log(arr);
@@ -214,18 +214,18 @@ let pass_2 = $(".password_2");
 const signInClick = $(".signIn_2");
 signInClick.on("click", () => {
   for (let i = 0; i < arr.length; i++) {
-    localStorage.getItem("arr")
+    localStorage.getItem("arr");
     if (
-     (arr[i].displayName.toLowerCase() === text_2.val().toLowerCase() ||
-    arr[i].email.toLowerCase() === text_2.val().toLowerCase() )&&
-        arr[i].pass === pass_2.val()
+      (arr[i].displayName.toLowerCase() === text_2.val().toLowerCase() ||
+        arr[i].email.toLowerCase() === text_2.val().toLowerCase()) &&
+      arr[i].pass === pass_2.val()
     ) {
-      x= text_2.val()
+      x = text_2.val();
       text_2.val("");
-        pass_2.val("");
-        wrong_4.css({
-            display: "none",
-          });
+      pass_2.val("");
+      wrong_4.css({
+        display: "none",
+      });
       console.log(arr[i]);
       $(".sigInPage").css({
         display: "none",
@@ -234,17 +234,12 @@ signInClick.on("click", () => {
         display: "block",
       });
     }
-    
-    
-       
-        wrong_4.css({
-          display: "block",
-        });
-    
+
+    wrong_4.css({
+      display: "block",
+    });
   }
 });
-
-
 
 $(".logout").on("click", () => {
   wrong_4.css({
@@ -265,33 +260,62 @@ $(".plus").on("click", () => {
 
 let clicks = 0;
 $(".publish").on("click", () => {
-  addPosts = $('<div class="addposts"></div>')
-  profilePic = $('<img class="profilePic" src="user.png" alt="">')
-  name_1 = $('<span id="name"></span>')
-  date = $('<p id="date"></p>')
-  question= $('<div id="question"></div>')
-  like_counter = $('<a href="#" class="like-counter">Like</a><span class="click-text"><a id="clicks">  </a></span>')
-  $('.prepend').prepend(addPosts);
+  addPosts = $('<div class="addposts"></div>');
+  profilePic = $('<img class="profilePic" src="user.png" alt="">');
+  name_1 = $('<span id="name"></span>');
+  date = $('<p id="date"></p>');
+  question = $('<div id="question"></div>');
+  like_counter = $(
+    '<a href="#" class="like-counter">Like</a><span class="click-text"><a id="clicks">  </a></span>'
+  );
+  comment = $("<button>comment</button>");
+  ul = $('<ul class = "comment"></ul>');
+  writeComment = $('<input id = "answar" type="text" placeholder="Write a comment">')
+  add = $('<button id = "add" >add</button>');
+  li = $("<li><div></div></li>");
+  profilePic_2 = $('<img class="profilePic_2" src="user.png" alt="">');
+  name_2 = $('<span id="name_2"></span>');
+  answer = $('<div id="answer"></div>');
+  $(".prepend").prepend(addPosts);
   addPosts.append(profilePic);
   addPosts.append(name_1);
   addPosts.append(date);
   addPosts.append(question);
   addPosts.append(like_counter);
-  document.getElementById('name').innerHTML=x
-  document.getElementById('date').innerHTML=Date().split(' ').splice(0,5).join(' ')
-  document.getElementById('question').innerHTML= $('.status').val()
-  document.getElementById("clicks").innerHTML = `    ${clicks}`;
- 
-$('.like-counter').click(function() {
-  clicks += 1;
-  document.getElementById("clicks").innerHTML = `    ${clicks}`;
-  $('.like-counter').addClass("liked");
-});
-  $('.status').val('')
-    $(".posts").css({
-      display: "none",
-    });
-    $(".addposts").css({
-      display: "block",
-    });
+  addPosts.append(comment);
+  comment.on("click", () => {
+    addPosts.append(ul);
+    ul.append(writeComment);
+    ul.append(add);
   });
+  add.on("click", () => {
+    ul.append(li);
+    li.append(profilePic_2);
+    li.append(name_2);
+    li.append(answer);
+    document.getElementById("name_2").innerHTML = x;
+    document.getElementById("answer").innerHTML = $("#answar").val();
+  });
+
+  document.getElementById("name").innerHTML = x;
+
+  document.getElementById("date").innerHTML = Date()
+    .split(" ")
+    .splice(0, 5)
+    .join(" ");
+  document.getElementById("question").innerHTML = $(".status").val();
+  document.getElementById("clicks").innerHTML = `    ${clicks}`;
+
+  $(".like-counter").click(function () {
+    clicks += 1;
+    document.getElementById("clicks").innerHTML = `    ${clicks}`;
+    $(".like-counter").addClass("liked");
+  });
+  $(".status").val("");
+  $(".posts").css({
+    display: "none",
+  });
+  $(".addposts").css({
+    display: "block",
+  });
+});
