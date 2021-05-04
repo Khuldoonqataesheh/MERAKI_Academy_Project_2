@@ -20,7 +20,7 @@ body {
 }
 
 .signUpPage {
-  display: none;
+  display: block;
   position: relative;
 }
 .wrong {
@@ -179,7 +179,7 @@ body {
   font-weight: bold;
 }
 .mainpage {
-  display: block;
+  display: none;
   background-color: #fafafa;
 }
 
@@ -251,7 +251,7 @@ body {
 
   margin-left: 995px;
   background-color: #dad6d6;
-  border-radius: 2px;
+  border-radius: 6px;
   font-size: 20px;
 }
 .status:focus {
@@ -275,6 +275,7 @@ body {
   height: auto;
   margin-top: 10px;
   margin-left: 500px;
+  border-radius: 6px;
 }
 
 #name {
@@ -287,8 +288,9 @@ body {
   font-size: 12px;
   font-weight: bold;
   font-family: "Mukta", sans-serif;
-
+  background-color: #dad6d6;
   padding: 10px;
+  border-radius: 6px 6px 0px 6px;
 }
 
 .profilePic {
@@ -338,9 +340,8 @@ body {
 #answar {
   border: none;
   padding: 8px;
- width: 200px;
+  width: 200px;
 
- 
   background-color: #dad6d6;
   border-radius: 4px;
   font-size: 12px;
@@ -348,18 +349,19 @@ body {
 #answar:focus {
   outline: none;
 }
-#add{
+#add {
   border: none;
   color: white;
   text-align: center;
   margin: 4px 2px;
   transition: 0.3s;
   background-color: rgba(221, 147, 29);
-  padding: 8px ;
+  padding: 8px;
   font-size: 12px;
   cursor: pointer;
+  border-radius: 4px;
 }
-.comm{
+.comm {
   display: block;
   border: none;
   height: 44px;
@@ -369,12 +371,14 @@ body {
   margin-left: 148.5px;
   transition: 0.3s;
   background-color: rgba(221, 147, 29);
-  padding: 12px 0px 12px 0px ;
+  padding: 12px 0px 12px 0px;
   font-size: 16px;
-  cursor: pointer;
 
+  cursor: pointer;
+  border-bottom: 1px solid black;
+  border-radius: 6px;
 }
-.like{
+.like {
   display: block;
   float: left;
   border: none;
@@ -383,24 +387,24 @@ body {
   color: white;
   text-align: center;
   border-right: 1px solid black;
-
-  transition: 0.3s;
+  border-bottom: 1px solid black;
   background-color: rgba(221, 147, 29);
-  padding: 12px 0px 12px 0px ;
+  padding: 12px 0px 12px 0px;
   font-size: 16px;
+  font-weight: normal;
   cursor: pointer;
+  border-radius: 6px;
 }
-.li{
- list-style: none;
+.li {
+  list-style: none;
 }
-#answer{
-  margin-top: 2px;
+#answer {
+  width: max-content;
+  margin: 4px;
   margin-left: 30px;
   padding: 10px;
   font-size: 13px;
   font-family: "Mukta", sans-serif;
-
-}
-.comment{
-  border-top: 1px solid rgba(221, 147, 29);
+  background-color: #dad6d6;
+  border-radius: 0px 6px 6px 6px;
 }
