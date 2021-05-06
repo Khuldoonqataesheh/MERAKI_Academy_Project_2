@@ -185,19 +185,37 @@ signUpClick.on("click", () => {
       display: "none",
     });
     if (mail.val().length > 6 && pass.val().length >= 8 && obj.displayName) {
-      {
+      
         x = text.val();
 
         wrong_3.css({
           display: "none",
         });
+        
+        let arr1
+        if(localStorage.getItem("arr")){
+          obj.email = mail.val();
+          obj.pass = pass.val();
+          arr.push(obj)
+          arr1 = JSON.stringify(arr)
+          localStorage.setItem('arr',arr1)
+          arr = JSON.parse(localStorage['arr'])
+          console.log(arr)
+        }
+        if(localStorage.getItem("arr") === null){
         obj.email = mail.val();
         obj.pass = pass.val();
         arr.push(obj);
-        localStorage.setItem("arr", arr);
+        arr1 = JSON.stringify(arr)
+        localStorage.setItem('arr',arr1)
+        arr = JSON.parse(localStorage['arr']) 
+        console.log(arr)
+        }
+       
+        
         mail.val("");
         pass.val("");
-        console.log(arr);
+      //  console.log(arr);
         $(".signUpPage").css({
           display: "none",
         });
@@ -206,15 +224,15 @@ signUpClick.on("click", () => {
         });
       }
     }
-  }
-});
+  });
 
 let text_2 = $(".displayName_2");
 let pass_2 = $(".password_2");
 const signInClick = $(".signIn_2");
 signInClick.on("click", () => {
+  arr = JSON.parse(localStorage['arr'])
   for (let i = 0; i < arr.length; i++) {
-    localStorage.getItem("arr");
+    
     if (
       (arr[i].displayName.toLowerCase() === text_2.val().toLowerCase() ||
         arr[i].email.toLowerCase() === text_2.val().toLowerCase()) &&
@@ -265,11 +283,13 @@ $(".publish").on("click", () => {
   name_1 = $('<span id="name"></span>');
   date = $('<p id="date"></p>');
   question = $('<div id="question"></div>');
-  like = $("<button class = 'like' > Like </button>");
-
+  like = $("<button class = 'like' > Like </button>")
+ 
   comment = $("<button class = 'comm' > comment </button>");
-  pre = $(' <div id="pre"></div>');
-
+  pre = $(' <div id="pre"></div>')
+ 
+  
+  
   $(".prepend").prepend(addPosts);
   addPosts.append(profilePic);
   addPosts.append(name_1);
@@ -279,39 +299,42 @@ $(".publish").on("click", () => {
   addPosts.append(comment);
   addPosts.append(pre);
   like.on("click", () => {
+   
     $(".like").css({
-      color: "#0571ed",
+      "color": "#0571ed",
       " font-size": "20px",
-      "font-weight": "bold",
+    "font-weight": "bold",
     });
+  
+   
   });
 
   comment.on("click", () => {
+   
     ul = $('<ul class = "comment"></ul>');
-    writeComment = $(
-      '<input id = "answar" type="text" placeholder="Write a comment">'
-    );
+    writeComment = $('<input id = "answar" type="text" placeholder="Write a comment">')
     add = $('<button id = "add" >add</button>');
-
-    $("#pre").prepend(ul);
+  
+    $('#pre').prepend(ul);
     ul.append(writeComment);
     ul.append(add);
     add.on("click", () => {
       li = $("<li class = 'li'></li>");
-      profilePic_2 = $('<img class="profilePic_2" src="user.png" alt="">');
-      name_2 = $('<span id="name_2"></span>');
-      answer = $('<div id="answer"></div>');
-
+    profilePic_2 = $('<img class="profilePic_2" src="user.png" alt="">');
+    name_2 = $('<span id="name_2"></span>');
+    answer = $('<div id="answer"></div>');
+   
       ul.append(li);
       li.append(profilePic_2);
       li.append(name_2);
       li.append(answer);
       document.getElementById("name_2").innerHTML = x;
       document.getElementById("answer").innerHTML = $("#answar").val();
-      writeComment.remove();
-      add.remove();
+       writeComment.remove()
+    add.remove()
     });
   });
+  
 
   document.getElementById("name").innerHTML = x;
 
